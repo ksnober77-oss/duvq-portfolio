@@ -5,6 +5,7 @@ if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -57,17 +58,35 @@ const closeModal = () => {
   modal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 };
+const openProject = (card) => {
+  modalTitle.textContent = card.dataset.title;
+  modalMeta.textContent = card.dataset.meta;
+  modalDescription.textContent = card.dataset.description;
+  const sourceImage = card.querySelector('.project-image');
+  modalArt.className = `modal-art ${[...sourceImage.classList].find((name) => name.startsWith('image-')) || ''}`;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
 document.querySelectorAll('.project-card').forEach((card) => {
-  card.addEventListener('click', () => {
-    modalTitle.textContent = card.dataset.title;
-    modalMeta.textContent = card.dataset.meta;
-    modalDescription.textContent = card.dataset.description;
-    const sourceImage = card.querySelector('.project-image');
-    modalArt.className = `modal-art ${[...sourceImage.classList].find((name) => name.startsWith('image-')) || ''}`;
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+  card.addEventListener('click', () => openProject(card));
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openProject(card);
+    }
   });
+  if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -3;
+      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 3;
+      card.querySelector('.project-image').style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(.985)`;
+    });
+    card.addEventListener('pointerleave', () => {
+      card.querySelector('.project-image').style.transform = '';
+    });
+  }
 });
 document.querySelector('.modal-close')?.addEventListener('click', closeModal);
 document.querySelector('.modal-backdrop')?.addEventListener('click', closeModal);

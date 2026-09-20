@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="upgrade.css" />
 </head>
 <body>
   <div class="site-noise" aria-hidden="true"></div>
@@ -36,6 +37,12 @@
       <div class="scroll-cue mono">scroll to explore <span>↓</span></div>
     </section>
 
+    <section class="signal-strip" aria-label="Live studio signals">
+      <div class="signal-track">
+        <span>AI / ART DIRECTION</span><i>✳</i><span>GENERATIVE WORLDS</span><i>✳</i><span>MOTION SYSTEMS</span><i>✳</i><span>NEW NATURE</span><i>✳</i><span>AI / ART DIRECTION</span><i>✳</i><span>GENERATIVE WORLDS</span><i>✳</i><span>MOTION SYSTEMS</span><i>✳</i><span>NEW NATURE</span><i>✳</i>
+      </div>
+    </section>
+
     <section class="work-section section-pad" id="work">
       <div class="section-heading reveal"><span class="section-index mono">01 / 03</span><h2>Selected<br /><em>signals</em></h2><span class="section-note mono">click a work to inspect</span></div>
       <div class="filter-row reveal" role="tablist" aria-label="Filter projects">
@@ -45,27 +52,27 @@
         <button class="filter" data-filter="world" role="tab" aria-selected="false">World-building <span>01</span></button>
       </div>
       <div class="project-grid">
-        <article class="project-card project-feature reveal" data-category="image" data-title="Synthetic Bloom" data-meta="Image system / 2026" data-description="A study in engineered tenderness. Thousands of generated petals, one living visual language.">
+        <article class="project-card project-feature reveal" tabindex="0" role="button" aria-label="Open Synthetic Bloom project" data-category="image" data-title="Synthetic Bloom" data-meta="Image system / 2026" data-description="A study in engineered tenderness. Thousands of generated petals, one living visual language.">
           <div class="project-image image-bloom"><div class="image-label mono">IMG—001</div><div class="bloom-shape"></div><div class="hover-arrow">↗</div></div>
           <div class="project-meta"><div><span class="project-kind mono">Image system</span><h3>Synthetic Bloom</h3></div><span class="project-year mono">2026</span></div>
         </article>
-        <article class="project-card reveal" data-category="motion" data-title="Afterlight / 03" data-meta="Motion identity / 2025" data-description="A moving identity for a future-facing cultural platform. Built from light, time and a little friction.">
+        <article class="project-card reveal" tabindex="0" role="button" aria-label="Open Afterlight project" data-category="motion" data-title="Afterlight / 03" data-meta="Motion identity / 2025" data-description="A moving identity for a future-facing cultural platform. Built from light, time and a little friction.">
           <div class="project-image image-afterlight"><div class="image-label mono">MOV—003</div><div class="afterlight-sphere"></div><div class="scan-lines"></div><div class="hover-arrow">↗</div></div>
           <div class="project-meta"><div><span class="project-kind mono">Motion identity</span><h3>Afterlight / 03</h3></div><span class="project-year mono">2025</span></div>
         </article>
-        <article class="project-card reveal" data-category="world" data-title="The Soft Machine" data-meta="World-building / 2025" data-description="An imagined ecology where architecture grows, breathes and remembers the people inside it.">
+        <article class="project-card reveal" tabindex="0" role="button" aria-label="Open The Soft Machine project" data-category="world" data-title="The Soft Machine" data-meta="World-building / 2025" data-description="An imagined ecology where architecture grows, breathes and remembers the people inside it.">
           <div class="project-image image-machine"><div class="image-label mono">WRL—005</div><div class="machine-sun"></div><div class="machine-arch"></div><div class="hover-arrow">↗</div></div>
           <div class="project-meta"><div><span class="project-kind mono">World-building</span><h3>The Soft Machine</h3></div><span class="project-year mono">2025</span></div>
         </article>
-        <article class="project-card reveal" data-category="image" data-title="Chrome Rituals" data-meta="Art direction / 2024" data-description="Objects from a ritual not yet invented — polished, reflective and just slightly alive.">
+        <article class="project-card reveal" tabindex="0" role="button" aria-label="Open Chrome Rituals project" data-category="image" data-title="Chrome Rituals" data-meta="Art direction / 2024" data-description="Objects from a ritual not yet invented — polished, reflective and just slightly alive.">
           <div class="project-image image-chrome"><div class="image-label mono">IMG—008</div><div class="chrome-object"></div><div class="chrome-shadow"></div><div class="hover-arrow">↗</div></div>
           <div class="project-meta"><div><span class="project-kind mono">Art direction</span><h3>Chrome Rituals</h3></div><span class="project-year mono">2024</span></div>
         </article>
-        <article class="project-card project-wide reveal" data-category="motion" data-title="Latent Field" data-meta="Generative film / 2024" data-description="A generative film about the quiet moment before a thought becomes a shape.">
+        <article class="project-card project-wide reveal" tabindex="0" role="button" aria-label="Open Latent Field project" data-category="motion" data-title="Latent Field" data-meta="Generative film / 2024" data-description="A generative film about the quiet moment before a thought becomes a shape.">
           <div class="project-image image-field"><div class="image-label mono">MOV—011</div><div class="field-grid"></div><div class="field-orb orb-a"></div><div class="field-orb orb-b"></div><div class="hover-arrow">↗</div></div>
           <div class="project-meta"><div><span class="project-kind mono">Generative film</span><h3>Latent Field</h3></div><span class="project-year mono">2024</span></div>
         </article>
-        <article class="project-card reveal" data-category="image" data-title="New Nature" data-meta="Visual research / 2024" data-description="A visual research series searching for a new naturalism in synthetic materials.">
+        <article class="project-card reveal" tabindex="0" role="button" aria-label="Open New Nature project" data-category="image" data-title="New Nature" data-meta="Visual research / 2024" data-description="A visual research series searching for a new naturalism in synthetic materials.">
           <div class="project-image image-nature"><div class="image-label mono">RES—014</div><div class="nature-leaf leaf-a"></div><div class="nature-leaf leaf-b"></div><div class="hover-arrow">↗</div></div>
           <div class="project-meta"><div><span class="project-kind mono">Visual research</span><h3>New Nature</h3></div><span class="project-year mono">2024</span></div>
         </article>
